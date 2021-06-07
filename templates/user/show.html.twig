@@ -3,6 +3,16 @@
 {% block title %}User{% endblock %}
 
 {% block body %}
+
+    {% for flash in app.flashes('success') %}
+        <div class="alert alert-success" role="alert">{{ flash }}</div>
+    {% endfor %}
+
+    {% if user.avatar %}
+    <img src="{{ asset('uploads/avatars/' ~ user.avatar) }}" style="border-radius: 100px; width: 100px; height: 100px; object-fit:cover;" />
+    {% endif %}
+
+
     <h1>User</h1>
 
     <table class="table">
@@ -17,6 +27,14 @@
             </tr>
     </table>
 
+    {{ form_start(form) }}
+        {{ form_row(form.avatar) }}
+        <input type="submit" value="Uploader"/>
+    {{ form_end(form) }}
+
+    
+
+    {% if user.posts is not empty %}
     <h2>User posts</h2>
 
     <table class="table">
@@ -48,7 +66,9 @@
         {% endfor %}
         </tbody>
     </table>
+    {% endif %}
 
+    {% if user.comments is not empty %}
     <h2>Comment index</h2>
 
     <table class="table">
@@ -80,6 +100,7 @@
         {% endfor %}
         </tbody>
     </table>
+    {% endif %}
 
     <a href="{{ path('user_index') }}">back to list</a>
 {% endblock %}
