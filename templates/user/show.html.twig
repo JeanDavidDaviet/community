@@ -1,32 +1,23 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post{% endblock %}
+{% block title %}User{% endblock %}
 
 {% block body %}
-    <h1>Post</h1>
+    <h1>User</h1>
 
     <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ post.id }}</td>
+                <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Content</th>
-                <td>{{ post.content }}</td>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
             </tr>
-            <tr>
-                <th>Created_at</th>
-                <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Updated_at</th>
-                <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
     </table>
 
-    <h2>Commentaires</h2>
+    <h2>User posts</h2>
 
     <table class="table">
         <thead>
@@ -39,7 +30,39 @@
             </tr>
         </thead>
         <tbody>
-        {% for comment in post.comments %}
+        {% for post in user.posts %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.content }}</td>
+                <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
+                    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Comment index</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>Created_at</th>
+                <th>Updated_at</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for comment in user.comments %}
             <tr>
                 <td>{{ comment.id }}</td>
                 <td>{{ comment.content }}</td>
@@ -58,9 +81,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('post_index') }}">back to list</a>
-
-    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
-
-    {{ include('post/_delete_form.html.twig') }}
+    <a href="{{ path('user_index') }}">back to list</a>
 {% endblock %}

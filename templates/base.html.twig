@@ -14,6 +14,12 @@
         {% endblock %}
     </head>
     <body>
+        <ul>
+            <li><a href="{{ path('page_index') }} ">Pages</a></li>
+            <li><a href="{{ path('post_index') }} ">Posts</a></li>
+            <li><a href="{{ path('comment_index') }} ">Commentaires</a></li>
+            <li><a href="{{ path('user_index') }} ">Membres</a></li>
+        </ul>
         {% block body %}{% endblock %}
     </body>
 </html>
