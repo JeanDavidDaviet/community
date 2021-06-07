@@ -88,7 +88,7 @@ class Page
         return $this->published_at;
     }
 
-    public function setPublishedAt(\DateTimeInterface $published_at): self
+    public function setPublishedAt(\DateTimeInterface $published_at = null): self
     {
         $this->published_at = $published_at;
 
