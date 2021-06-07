@@ -1,42 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Page{% endblock %}
+{% block title %}{{ "Page" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Page</h1>
+    <h1>{{ "Page" | trans }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{ "Identifiant" | trans }}</th>
                 <td>{{ page.id }}</td>
             </tr>
             <tr>
-                <th>Slug</th>
+                <th>{{ "Chemin" | trans }}</th>
                 <td>{{ page.slug }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>{{ "Contenu" | trans }}</th>
                 <td>{{ page.content }}</td>
             </tr>
             <tr>
-                <th>Created_at</th>
+                <th>{{ "Crée le" | trans }}</th>
                 <td>{{ page.createdAt ? page.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Published_at</th>
+                <th>{{ "Publié le" | trans }}</th>
                 <td>{{ page.publishedAt ? page.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Updated_at</th>
+                <th>{{ "Mis à jour le" | trans }}</th>
                 <td>{{ page.updatedAt ? page.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('page_index') }}">back to list</a>
+    <a href="{{ path('page_index') }}">{{ "Retour à la liste" | trans }}</a>
 
-    <a href="{{ path('page_edit', {'id': page.id}) }}">edit</a>
+    <a href="{{ path('page_edit', {'id': page.id}) }}">{{ "Èditer" | trans }}</a>
 
     {{ include('page/_delete_form.html.twig') }}
 {% endblock %}

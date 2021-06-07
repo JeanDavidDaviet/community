@@ -1,41 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post{% endblock %}
+{% block title %}{{ "Publication" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Post</h1>
+    <h1>{{ "Publication" | trans }}</h1>
 
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{ "Identifiant" | trans }}</th>
                 <td>{{ post.id }}</td>
             </tr>
             <tr>
-                <th>Content</th>
+                <th>{{ "Contenu" | trans }}</th>
                 <td>{{ post.content }}</td>
             </tr>
             <tr>
-                <th>Created_at</th>
+                <th>{{ "Crée le" | trans }}</th>
                 <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Updated_at</th>
+                <th>{{ "Mis à jour le" | trans }}</th>
                 <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
 
-    <h2>Commentaires</h2>
+    <h2>{{ "Commentaires" | trans }}</h2>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>actions</th>
+                <th>{{ "Identifiant" | trans }}</th>
+                <th>{{ "Contenu" | trans }}</th>
+                <th>{{ "Crée le" | trans }}</th>
+                <th>{{ "Mis à jour le" | trans }}</th>
+                <th>{{ "Actions" | trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -46,21 +46,21 @@
                 <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ comment.updatedAt ? comment.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('comment_show', {'id': comment.id}) }}">show</a>
-                    <a href="{{ path('comment_edit', {'id': comment.id}) }}">edit</a>
+                    <a href="{{ path('comment_show', {'id': comment.id}) }}">{{ "Afficher" | trans }}</a>
+                    <a href="{{ path('comment_edit', {'id': comment.id}) }}">{{ "Editer" | trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">{{ "Aucun commentaire trouvée" | trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('post_index') }}">back to list</a>
+    <a href="{{ path('post_index') }}">{{ "Retour à la liste" | trans }}</a>
 
-    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
+    <a href="{{ path('post_edit', {'id': post.id}) }}">{{ "Éditer" | trans }}</a>
 
     {{ include('post/_delete_form.html.twig') }}
 {% endblock %}

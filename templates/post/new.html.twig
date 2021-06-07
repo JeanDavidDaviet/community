@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Post{% endblock %}
+{% block title %}{{ "Nouvelle publication" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Post</h1>
+    <h1>{{ "Créer une nouvelle publication" | trans }}</h1>
 
     {{ include('post/_form.html.twig') }}
 
-    <a href="{{ path('post_index') }}">back to list</a>
+    <a href="{{ path('post_index') }}">{{ "Retour à la liste" | trans }}</a>
 {% endblock %}

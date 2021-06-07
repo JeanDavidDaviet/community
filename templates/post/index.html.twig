@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Post index{% endblock %}
+{% block title %}{{ "Liste des publications" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Post index</h1>
+    <h1>{{ "Liste des publications" | trans }}</h1>
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Content</th>
-                <th>Created_at</th>
-                <th>Updated_at</th>
-                <th>actions</th>
+                <th>{{ "Identifiant" | trans }}</th>
+                <th>{{ "Contenu" | trans }}</th>
+                <th>{{ "Crée le" | trans }}</th>
+                <th>{{ "Mis à jour le" | trans }}</th>
+                <th>{{ "Actions" | trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -23,17 +23,17 @@
                 <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('post_show', {'id': post.id}) }}">show</a>
-                    <a href="{{ path('post_edit', {'id': post.id}) }}">edit</a>
+                    <a href="{{ path('post_show', {'id': post.id}) }}">{{ "Afficher" | trans }}</a>
+                    <a href="{{ path('post_edit', {'id': post.id}) }}">{{ "Editer" | trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="5">no records found</td>
+                <td colspan="5">{{ "Aucune publication trouvée" | trans }}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('post_new') }}">Create new</a>
+    <a href="{{ path('post_new') }}">{{ "Créer une publication" | trans }}</a>
 {% endblock %}

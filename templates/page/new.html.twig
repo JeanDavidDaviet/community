@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Page{% endblock %}
+{% block title %}{{ "Nouvelle page" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>Create new Page</h1>
+    <h1>{{ "Créer unce nouvelle page" | trans }}</h1>
 
     {{ include('page/_form.html.twig') }}
 
-    <a href="{{ path('page_index') }}">back to list</a>
+    <a href="{{ path('page_index') }}">{{ "Retour à la liste" | trans }}</a>
 {% endblock %}

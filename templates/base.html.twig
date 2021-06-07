@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{ "Page d'accueil" | trans }}{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         {% block stylesheets %}
@@ -15,10 +15,10 @@
     </head>
     <body>
         <ul>
-            <li><a href="{{ path('page_index') }} ">Pages</a></li>
-            <li><a href="{{ path('post_index') }} ">Posts</a></li>
-            <li><a href="{{ path('comment_index') }} ">Commentaires</a></li>
-            <li><a href="{{ path('user_index') }} ">Membres</a></li>
+            <li><a href="{{ path('page_index') }} ">{{ "Pages" | trans }}</a></li>
+            <li><a href="{{ path('post_index') }} ">{{ "Publications" | trans }}</a></li>
+            <li><a href="{{ path('comment_index') }} ">{{ "Commentaires" | trans }}</a></li>
+            <li><a href="{{ path('user_index') }} ">{{ "Membres" | trans }}</a></li>
         </ul>
         {% block body %}{% endblock %}
     </body>
