@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "Éditer le groupe de pages" | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ "Éditer le groupe de pages" | trans }}</h1>
+
+    {{ include('page_group/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('page_group_index') }}">{{ "Retour à la liste" | trans }}</a>
+
+    {{ include('page_group/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "Nouveau groupe de page" | trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ "Créer un nouveau groupe de page" | trans }}</h1>
+
+    {{ include('page_group/_form.html.twig') }}
+
+    <a href="{{ path('page_group_index') }}">{{ "Retour à la liste" | trans }}</a>
+{% endblock %}

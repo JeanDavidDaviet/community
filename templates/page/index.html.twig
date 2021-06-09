@@ -27,7 +27,7 @@
                 <td>{{ page.publishedAt ? page.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ page.updatedAt ? page.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('page_show', {'id': page.id}) }}">{{ "Afficher" | trans }}</a>
+                    <a href="{{ path('page_show', {'slug': page.slug}) }}">{{ "Afficher" | trans }}</a>
                     <a href="{{ path('page_edit', {'id': page.id}) }}">{{ "Editer" | trans }}</a>
                 </td>
             </tr>

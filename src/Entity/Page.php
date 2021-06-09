@@ -42,6 +42,16 @@ class Page
      */
     private $updated_at;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=PageGroup::class, inversedBy="pages")
+     */
+    private $pageGroup;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +113,30 @@ class Page
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(?string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    public function getPageGroup(): ?PageGroup
+    {
+        return $this->pageGroup;
+    }
+
+    public function setPageGroup(?PageGroup $pageGroup): self
+    {
+        $this->pageGroup = $pageGroup;
 
         return $this;
     }

@@ -42,7 +42,7 @@ class PageController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'page_show', methods: ['GET'])]
+    #[Route('/{slug}', name: 'page_show', methods: ['GET'])]
     public function show(Page $page): Response
     {
         return $this->render('page/show.html.twig', [

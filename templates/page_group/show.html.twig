@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ page_group.title }}{% endblock %}
+
+{% block body %}
+    <h1>{{ page_group.title }}</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>{{ "Identifiant" | trans }}</th>
+                <td>{{ page_group.id }}</td>
+            </tr>
+            <tr>
+                <th>{{ "Titre" | trans }}</th>
+                <td>{{ page_group.title }}</td>
+            </tr>
+            <tr>
+                <th>{{ "Chemin" | trans }}</th>
+                <td>{{ page_group.slug }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('page_group_index') }}">{{ "Retour à la liste" | trans }}</a>
+
+    <a href="{{ path('page_group_edit', {'id': page_group.id}) }}">{{ "Éditer" | trans }}</a>
+
+    {{ include('page_group/_delete_form.html.twig') }}
+{% endblock %}
