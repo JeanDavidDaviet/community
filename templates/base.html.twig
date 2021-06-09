@@ -44,33 +44,20 @@
                 </a>
             </div>
         </nav>
-        <div class="container d-flex">
-            {% block sidebarLeft %}
-            
-            <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
-                <ul class="nav nav-pills flex-column mb-auto">
-                    {% for group  in pageRepository.getPages() %}
-                    <li class="nav-item">{{ group.title }}</li>
-                        {% for page in group.pages %}
-                        <li class="nav-item"><a class="nav-link" href="{{ path('page_show', {'slug': page.slug}) }}">{{ page.title }}</a></li>
-                        {% endfor %}
-                    {% endfor %}
-                    <li class="nav-item"><a class="nav-link" href="{{ path('post_index') }}">{{ "Publications" | trans }}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ path('comment_index') }}">{{ "Commentaires" | trans }}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ path('user_index') }}">{{ "Membres" | trans }}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ path('page_group_index') }}">{{ "Groupes de pages" | trans }}</a></li>
-                </ul>
+
+        <div class="container">
+            <div class="row">
+        
+                <div class="col-md-4">
+                {% block sidebarLeft %}{% endblock %}
+                </div>
+
+                <div class="col-md-8">
+                {% block body %}{% endblock %}
+                </div>
+
             </div>
-
-            {% endblock %}
-
-            <div>{% block body %}{% endblock %}</div>
-
-            {% block sidebarRight %}
-
-
-            
-            {% endblock %}
         </div>
+
     </body>
 </html>

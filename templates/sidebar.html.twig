@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block sidebarLeft %}
+<div class="container d-flex">
+    <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
+        <ul class="nav nav-pills flex-column mb-auto">
+            {% for group  in pageRepository.getPages() %}
+            <li class="nav-item">{{ group.title }}</li>
+                {% for page in group.pages %}
+                <li class="nav-item"><a class="nav-link" href="{{ path('page_show', {'slug': page.slug}) }}">{{ page.title }}</a></li>
+                {% endfor %}
+            {% endfor %}
+            <li class="nav-item"><a class="nav-link" href="{{ path('post_index') }}">{{ "Publications" | trans }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('comment_index') }}">{{ "Commentaires" | trans }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('user_index') }}">{{ "Membres" | trans }}</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ path('page_group_index') }}">{{ "Groupes de pages" | trans }}</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}{% endblock %}
