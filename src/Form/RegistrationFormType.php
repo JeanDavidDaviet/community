@@ -44,6 +44,7 @@ class RegistrationFormType extends AbstractType
                     'label' => "Mot de passe",
                     'placeholder' => "Mot de passe",
                     'autocomplete' => 'new-password',
+                    'pattern' => '\w{6,}',
                 ],
                 'constraints' => [
                     new NotBlank([

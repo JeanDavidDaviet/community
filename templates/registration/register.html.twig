@@ -10,9 +10,9 @@
         <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
       </div>
       <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-4 p-md-5 border rounded-3 bg-light" method="post">
+        <form class="p-4 p-md-5 border rounded-3 bg-light {% if registrationForm.vars.submitted %}was-validated{% endif %}" method="post">
             {{ form_start(registrationForm) }}
-
+            {# {{ dump(registrationForm) }} #}
             {% for flashError in app.flashes('verify_email_error') %}
                 <div class="alert alert-danger" role="alert">{{ flashError }}</div>
             {% endfor %}
@@ -20,15 +20,24 @@
             <div class="form-floating mb-3">
                 {{ form_widget(registrationForm.email) }}
                 {{ form_label(registrationForm.email) }}
+                <div class="invalid-feedback">
+                {{ form_errors(registrationForm.email) }}
+                </div>
             </div>
             <div class="form-floating mb-3">
                 {{ form_widget(registrationForm.plainPassword) }}
                 {{ form_label(registrationForm.plainPassword, "Mot de passe") }}
+                <div class="invalid-feedback">
+                {{ form_errors(registrationForm.plainPassword) }}
+                </div>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">{{ "Créer un compte" | trans }}</button>
             <small class="text-muted">
                 {{ form_widget(registrationForm.agreeTerms) }}
                 {{ form_label(registrationForm.agreeTerms, "En cliquant sur créer un compte, vous acceptez les conditions d'utilisations.") }}
+                <div class="invalid-feedback">
+                {{ form_errors(registrationForm.agreeTerms) }}
+                </div>
             </small>
             <hr class="my-4">
             <small class="text-muted"><a href="{{ path('app_login') }}">{{ "J'ai déjà un compte" | trans}}</a></small>
