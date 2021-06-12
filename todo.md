@@ -1,0 +1,6 @@
+- [ ] Créer une page 404 customisé
+- [ ] Mettre en place les souscriptions
+- [ ] RGPD ready
+- [ ] Messagerie
+- [ ] Recherche
+- [ ] Notifications
