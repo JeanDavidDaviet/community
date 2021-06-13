@@ -25,6 +25,20 @@
                 </div>
             </div>
             <div class="form-floating mb-3">
+                {{ form_widget(registrationForm.firstname) }}
+                {{ form_label(registrationForm.firstname, 'Prénom') }}
+                <div class="invalid-feedback">
+                {{ form_errors(registrationForm.firstname) }}
+                </div>
+            </div>
+            <div class="form-floating mb-3">
+                {{ form_widget(registrationForm.lastname) }}
+                {{ form_label(registrationForm.lastname, 'Nom') }}
+                <div class="invalid-feedback">
+                {{ form_errors(registrationForm.lastname) }}
+                </div>
+            </div>
+            <div class="form-floating mb-3">
                 {{ form_widget(registrationForm.plainPassword) }}
                 {{ form_label(registrationForm.plainPassword, "Mot de passe") }}
                 <div class="invalid-feedback">
