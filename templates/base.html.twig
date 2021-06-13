@@ -44,6 +44,8 @@
                     <img src="{{ asset('uploads/avatars/' ~ app.user.avatar) }}" alt="" width="26" height="26" class="rounded-circle me-2">
                 </a>
                 {% endif %}
+                <a href="{{ path('home', {'_locale': 'fr'}) }}" class="d-flex align-items-center text-decoration-none p-2" {% if app.request.locale == 'fr' %}style="color: red;"{% endif %}>fr</a>
+                <a href="{{ path('home', {'_locale': 'en'}) }}" class="d-flex align-items-center text-decoration-none p-2" {% if app.request.locale == 'en' %}style="color: red;"{% endif %}>en</a>
             </div>
         </nav>
 
