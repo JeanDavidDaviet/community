@@ -2,29 +2,32 @@
 
 {% block content %}
 
-    <div class="col-md-4">
+    <div class="sidebar">
     {% block sidebar %}
-    <div class="container d-flex">
-        <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;">
-            <ul class="nav nav-pills flex-column mb-auto">
-                {% for group in pageRepository.getPages() %}
-                <li class="nav-item">{{ group.title }}</li>
+        <ul class="sidebar-list">
+            {% for group in pageRepository.getPages() %}
+            <li class="sidebar-group">
+                <p class="sidebar-group-title">{{ group.title }}</p>
+                <ul class="sidebar-list">
                     {% for page in group.pages %}
-                    <li class="nav-item"><a class="nav-link" href="{{ path('page_show', {'slug': page.slug}) }}">{{ page.title }}</a></li>
+                    <li class="sidebar-item"><a class="sidebar-link" href="{{ path('page_show', {'slug': page.slug}) }}">{{ page.title }}</a></li>
                     {% endfor %}
-                {% endfor %}
-                <li class="nav-item"><a class="nav-link" href="{{ path('post_index') }}">{{ "Publications" | trans }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ path('comment_index') }}">{{ "Commentaires" | trans }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ path('user_index') }}">{{ "Membres" | trans }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ path('page_group_index') }}">{{ "Groupes de pages" | trans }}</a></li>
-            </ul>
-        </div>
-    </div>
+                </ul>
+            </li>
+            {% endfor %}
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ path('post_index') }}">{{ "Publications" | trans }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ path('page_index') }}">{{ "Pages" | trans }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ path('comment_index') }}">{{ "Commentaires" | trans }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ path('user_index') }}">{{ "Membres" | trans }}</a></li>
+            <li class="sidebar-item"><a class="sidebar-link" href="{{ path('page_group_index') }}">{{ "Groupes de pages" | trans }}</a></li>
+        </ul>
     {% endblock %}
     </div>
 
-    <div class="col-md-8">
-    {% block body %}{% endblock %}
+    <div class="content">
+        <div class="content-inside">
+            {% block body %}{% endblock %}
+        </div>
     </div>
 
 
