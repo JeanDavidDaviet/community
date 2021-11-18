@@ -42,7 +42,7 @@
                 </a>
                 {% endif %}
                 {% if app.user and app.user.avatar %}
-                <a href="#" class="d-flex align-items-center text-decoration-none p-2">
+                <a href="{{ path('account') }}" class="d-flex align-items-center text-decoration-none p-2">
                     <img src="{{ asset('uploads/avatars/' ~ app.user.avatar) }}" alt="" width="26" height="26" class="rounded-circle me-2">
                 </a>
                 {% endif %}
