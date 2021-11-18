@@ -20,7 +20,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="{{ path('home') }} ">Communaute</a>
+                <a class="navbar-brand" href="{{ path('welcome') }} ">Communaute</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <input class="form-control" type="search" placeholder="{{ "Rechercher" | trans }}" aria-label="{{ "Rechercher" | trans }}">
                 </div>
@@ -44,8 +44,8 @@
                     <img src="{{ asset('uploads/avatars/' ~ app.user.avatar) }}" alt="" width="26" height="26" class="rounded-circle me-2">
                 </a>
                 {% endif %}
-                <a href="{{ path('home', {'_locale': 'fr'}) }}" class="d-flex align-items-center text-decoration-none p-2" {% if app.request.locale == 'fr' %}style="color: red;"{% endif %}>fr</a>
-                <a href="{{ path('home', {'_locale': 'en'}) }}" class="d-flex align-items-center text-decoration-none p-2" {% if app.request.locale == 'en' %}style="color: red;"{% endif %}>en</a>
+                <a href="{{ path('welcome', {'_locale': 'fr'}) }}" class="d-flex align-items-center text-decoration-none p-2" {% if app.request.locale == 'fr' %}style="color: red;"{% endif %}>fr</a>
+                <a href="{{ path('welcome', {'_locale': 'en'}) }}" class="d-flex align-items-center text-decoration-none p-2" {% if app.request.locale == 'en' %}style="color: red;"{% endif %}>en</a>
             </div>
         </nav>
 

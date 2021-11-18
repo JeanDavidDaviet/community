@@ -28,7 +28,7 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $passwordEncoder): Response
     {
         if ($this->getUser()) {
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('welcome');
         }
         
         $user = new User();
@@ -58,7 +58,7 @@ class RegistrationController extends AbstractController
             );
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('welcome');
         }
 
         return $this->render('registration/register.html.twig', [
@@ -70,7 +70,7 @@ class RegistrationController extends AbstractController
     public function verifyUserEmail(Request $request, UserRepository $userRepository): Response
     {
         if ($this->getUser()) {
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('welcome');
         }
 
         $id = $request->get('id');
