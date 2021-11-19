@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PageRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=PageRepository::class)
@@ -19,6 +20,7 @@ class Page
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Gedmo\Slug(fields={"title"})
      */
     private $slug;
 
@@ -60,13 +62,6 @@ class Page
     public function getSlug(): ?string
     {
         return $this->slug;
-    }
-
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
     }
 
     public function getContent(): ?string

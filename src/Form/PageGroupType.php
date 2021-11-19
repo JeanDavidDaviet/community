@@ -13,7 +13,6 @@ class PageGroupType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('slug')
         ;
     }
 
