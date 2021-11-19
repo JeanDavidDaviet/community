@@ -1,5 +1,5 @@
 ### Todo
 
-- [ ] Sanitize slug in page url
-- [ ] Use PHP-CS-Fixer
+- [x] Sanitize slug in page url and page-group url
+- [x] Use PHP-CS-Fixer
 - [ ] Finish styling the templates

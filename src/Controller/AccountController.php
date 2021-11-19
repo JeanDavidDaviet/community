@@ -15,7 +15,6 @@ class AccountController extends AbstractController
     #[Route('/account', name: 'account')]
     public function index(Request $request, UserPasswordHasherInterface $passwordEncoder): Response
     {
-
         $user = $this->getUser();
         $form = $this->createForm(AccountType::class, $user);
 
@@ -35,7 +34,7 @@ class AccountController extends AbstractController
 
             return $this->redirectToRoute('account');
         }
-        
+
         return $this->render('account/index.html.twig', [
             'controller_name' => 'AccountController',
             'form' => $form->createView(),

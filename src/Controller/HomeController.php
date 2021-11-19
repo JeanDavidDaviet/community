@@ -12,13 +12,13 @@ class HomeController extends AbstractController
     #[Route('/', name: 'home', requirements: ['_locale' => 'fr|en'])]
     public function home(Request $request): Response
     {
-      $locale = $request->getLocale();
-      return $this->redirectToRoute('welcome', ['_locale' => $locale]);
+        $locale = $request->getLocale();
+        return $this->redirectToRoute('welcome', ['_locale' => $locale]);
     }
-    
+
     #[Route('/{_locale}', name: 'welcome', requirements: ['_locale' => 'fr|en'])]
     public function welcome(): Response
     {
-      return $this->render('welcome.html.twig');
+        return $this->render('welcome.html.twig');
     }
 }

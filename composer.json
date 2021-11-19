@@ -89,6 +89,12 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "cs-fix": "tools/php-cs-fixer/vendor/bin/php-cs-fixer fix src",
+        "phpstan": "tools/phpstan/vendor/bin/phpstan analyse ./src",
+        "check-quality": [
+            "@composer cs-fix",
+            "@composer phpstan"
         ]
     },
     "conflict": {
