@@ -2,6 +2,12 @@
 
 {% block content %}
 
-    {% block body %}{% endblock %}
+    <div class="main-container main-container-no-sidebar">
+        <div class="content">
+            <div class="content-inside">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

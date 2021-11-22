@@ -30,9 +30,12 @@ body {
     display: flex;
     align-items: center;
 }
-.main-container {
-    display: grid;
-    grid-template-columns: 200px 1fr;
+.main-container:not(.main-container-no-sidebar) {
+    @media (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        align-items: flex-start;
+    }
 }
 
 .header-brand {
@@ -91,4 +94,15 @@ body {
 }
 
 .content-inside {
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.form-input {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    padding: 8px;
 }
