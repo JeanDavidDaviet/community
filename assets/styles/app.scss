@@ -106,3 +106,18 @@ body {
     border-radius: 4px;
     padding: 8px;
 }
+
+.is-selected .pika-button, .has-event .pika-button {
+    background: #768ea9;
+    box-shadow: none;
+}
+.pika-button:hover {
+    background: #768ea9;
+}
+.is-today .pika-button {
+    color: #768ea9;
+
+    &:hover {
+        color: white;
+    }
+}
