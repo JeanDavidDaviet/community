@@ -39,7 +39,6 @@ class PostType extends AbstractType
                 ],
                 'format' => 'yyyy-MM-dd',
             ])
-            ->add('author')
             ->add('submit', SubmitType::class, [
                 'label' => $submitLabel
             ])
