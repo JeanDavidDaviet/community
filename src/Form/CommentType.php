@@ -16,8 +16,8 @@ class CommentType extends AbstractType
             ->add('content', CKEditorType::class, array(
                 'config_name' => 'content_config',
             ))
-            ->add('created_at')
-            ->add('updated_at')
+            ->add('created_at', DatePickerType::class)
+            ->add('updated_at', DatePickerType::class)
             ->add('author')
             ->add('post')
         ;

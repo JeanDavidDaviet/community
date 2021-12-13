@@ -19,26 +19,11 @@ class PostType extends AbstractType
         $submitLabel = new TranslatableMessage('Créer');
         $builder
             ->add('title', TextType::class)
-            ->add('content', CKEditorType::class, array(
+            ->add('content', CKEditorType::class, [
                 'config_name' => 'content_config',
-            ))
-            ->add('created_at', DateType::class, [
-                'widget' => 'single_text',
-                'html5' => false,
-                'attr' => [
-                    'class' => 'js-datepicker'
-                ],
-                'format' => 'yyyy-MM-dd',
             ])
-            ->add('updated_at', DateType::class, [
-                'required' => false,
-                'widget' => 'single_text',
-                'html5' => false,
-                'attr' => [
-                    'class' => 'js-datepicker'
-                ],
-                'format' => 'yyyy-MM-dd',
-            ])
+            ->add('created_at', DatePickerType::class)
+            ->add('updated_at', DatePickerType::class)
             ->add('submit', SubmitType::class, [
                 'label' => $submitLabel
             ])
