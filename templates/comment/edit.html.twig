@@ -7,7 +7,5 @@
 
     {{ include('comment/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('comment_index') }}">{{ "Retour à la liste" | trans }}</a>
-
     {{ include('comment/_delete_form.html.twig') }}
 {% endblock %}

@@ -13,14 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/comment')]
 class CommentController extends AbstractController
 {
-    #[Route('/', name: 'comment_index', methods: ['GET'])]
-    public function index(CommentRepository $commentRepository): Response
-    {
-        return $this->render('comment/index.html.twig', [
-            'comments' => $commentRepository->findAll(),
-        ]);
-    }
-
     #[Route('/new', name: 'comment_new', methods: ['GET', 'POST'])]
     public function new(Request $request): Response
     {
@@ -33,20 +25,12 @@ class CommentController extends AbstractController
             $entityManager->persist($comment);
             $entityManager->flush();
 
-            return $this->redirectToRoute('comment_index');
+            return $this->redirectToRoute('post_index');
         }
 
         return $this->render('comment/new.html.twig', [
             'comment' => $comment,
             'form' => $form->createView(),
-        ]);
-    }
-
-    #[Route('/{id}', name: 'comment_show', methods: ['GET'])]
-    public function show(Comment $comment): Response
-    {
-        return $this->render('comment/show.html.twig', [
-            'comment' => $comment,
         ]);
     }
 
@@ -59,7 +43,7 @@ class CommentController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('comment_index');
+            return $this->redirectToRoute('post_index');
         }
 
         return $this->render('comment/edit.html.twig', [
@@ -77,6 +61,6 @@ class CommentController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('comment_index');
+        return $this->redirectToRoute('post_index');
     }
 }
