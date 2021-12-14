@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\PageGroup;
 use App\Form\PageGroupType;
 use App\Repository\PageGroupRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,14 +23,13 @@ class PageGroupController extends AbstractController
     }
 
     #[Route('/new', name: 'page_group_new', methods: ['GET', 'POST'])]
-    public function new(Request $request): Response
+    public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $pageGroup = new PageGroup();
         $form = $this->createForm(PageGroupType::class, $pageGroup);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($pageGroup);
             $entityManager->flush();
 
@@ -51,13 +51,13 @@ class PageGroupController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'page_group_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, PageGroup $pageGroup): Response
+    public function edit(Request $request, PageGroup $pageGroup, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(PageGroupType::class, $pageGroup);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager->flush();
 
             return $this->redirectToRoute('page_group_index');
         }
@@ -69,10 +69,9 @@ class PageGroupController extends AbstractController
     }
 
     #[Route('/{id}', name: 'page_group_delete', methods: ['POST'])]
-    public function delete(Request $request, PageGroup $pageGroup): Response
+    public function delete(Request $request, PageGroup $pageGroup, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$pageGroup->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($pageGroup);
             $entityManager->flush();
         }

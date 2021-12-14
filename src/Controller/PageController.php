@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Page;
 use App\Form\PageType;
 use App\Repository\PageRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,14 +23,13 @@ class PageController extends AbstractController
     }
 
     #[Route('/new', name: 'page_new', methods: ['GET', 'POST'])]
-    public function new(Request $request): Response
+    public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $page = new Page();
         $form = $this->createForm(PageType::class, $page);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($page);
             $entityManager->flush();
 
@@ -51,13 +51,13 @@ class PageController extends AbstractController
     }
 
     #[Route('/{id}/edit', name: 'page_edit', methods: ['GET', 'POST'])]
-    public function edit(Request $request, Page $page): Response
+    public function edit(Request $request, Page $page, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(PageType::class, $page);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager->flush();
 
             return $this->redirectToRoute('page_index');
         }
@@ -69,10 +69,9 @@ class PageController extends AbstractController
     }
 
     #[Route('/{id}', name: 'page_delete', methods: ['POST'])]
-    public function delete(Request $request, Page $page): Response
+    public function delete(Request $request, Page $page, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$page->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($page);
             $entityManager->flush();
         }

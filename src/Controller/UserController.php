@@ -6,6 +6,7 @@ use App\Entity\Post;
 use App\Entity\User;
 use App\Form\AvatarType;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
@@ -25,7 +26,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/{id}', name: 'user_show', methods: ['GET', 'POST'])]
-    public function show(User $user, Request $request, SluggerInterface $slugger): Response
+    public function show(User $user, Request $request, SluggerInterface $slugger, EntityManagerInterface $entityManager): Response
     {
         $form = $this->createForm(AvatarType::class);
         $form->handleRequest($request);
@@ -51,7 +52,6 @@ class UserController extends AbstractController
             // updates the 'avatarname' property to store the PDF file name
             // instead of its contents
             $user->setAvatar($newFilename);
-            $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
 
