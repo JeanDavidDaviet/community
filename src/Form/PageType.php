@@ -20,7 +20,8 @@ class PageType extends AbstractType
                 'config_name' => 'content_config',
             ))
             ->add('page_group', EntityType::class, [
-                'class' => PageGroup::class
+                'class' => PageGroup::class,
+                'required' => false
             ])
         ;
     }
