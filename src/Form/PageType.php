@@ -22,9 +22,6 @@ class PageType extends AbstractType
             ->add('page_group', EntityType::class, [
                 'class' => PageGroup::class
             ])
-            ->add('created_at', DatePickerType::class)
-            ->add('published_at', DatePickerType::class)
-            ->add('updated_at', DatePickerType::class)
         ;
     }
 

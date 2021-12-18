@@ -30,18 +30,6 @@
                 <th>{{ "Groupe" | trans }}</th>
                 <td>{{ page.pageGroup }}</td>
             </tr>
-            <tr>
-                <th>{{ "Crée le" | trans }}</th>
-                <td>{{ page.createdAt ? page.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>{{ "Publié le" | trans }}</th>
-                <td>{{ page.publishedAt ? page.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>{{ "Mis à jour le" | trans }}</th>
-                <td>{{ page.updatedAt ? page.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
         </tbody>
     </table>
     {% endif %}
