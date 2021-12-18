@@ -34,8 +34,6 @@
     </table>
     {% endif %}
 
-    <a href="{{ path('page_index') }}">{{ "Retour à la liste" | trans }}</a>
-
     <a href="{{ path('page_edit', {'id': page.id}) }}">{{ "Éditer" | trans }}</a>
 
     {{ include('page/_delete_form.html.twig') }}

@@ -14,14 +14,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/page')]
 class PageController extends AbstractController
 {
-    #[Route('/', name: 'page_index', methods: ['GET'])]
-    public function index(PageRepository $pageRepository): Response
-    {
-        return $this->render('page/index.html.twig', [
-            'pages' => $pageRepository->findAll(),
-        ]);
-    }
-
     #[Route('/new', name: 'page_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -33,7 +25,7 @@ class PageController extends AbstractController
             $entityManager->persist($page);
             $entityManager->flush();
 
-            return $this->redirectToRoute('page_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('page/new.html.twig', [
@@ -59,7 +51,7 @@ class PageController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('page_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('page/edit.html.twig', [
@@ -76,6 +68,6 @@ class PageController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('page_index');
+        return $this->redirectToRoute('home');
     }
 }
