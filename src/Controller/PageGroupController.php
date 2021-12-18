@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\PageGroup;
 use App\Form\PageGroupType;
-use App\Repository\PageGroupRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,14 +13,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/page_group')]
 class PageGroupController extends AbstractController
 {
-    #[Route('/', name: 'page_group_index', methods: ['GET'])]
-    public function index(PageGroupRepository $pageGroupRepository): Response
-    {
-        return $this->render('page_group/index.html.twig', [
-            'page_groups' => $pageGroupRepository->findAll(),
-        ]);
-    }
-
     #[Route('/new', name: 'page_group_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -33,7 +24,7 @@ class PageGroupController extends AbstractController
             $entityManager->persist($pageGroup);
             $entityManager->flush();
 
-            return $this->redirectToRoute('page_group_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('page_group/new.html.twig', [
@@ -59,7 +50,7 @@ class PageGroupController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('page_group_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('page_group/edit.html.twig', [
@@ -76,6 +67,6 @@ class PageGroupController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('page_group_index');
+        return $this->redirectToRoute('home');
     }
 }
