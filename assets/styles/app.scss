@@ -73,17 +73,42 @@ body {
 .sidebar-item {
     margin-bottom: 8px;
 }
+.sidebar-cog {
+    display: flex;
+    align-items: center;
+}
 .sidebar-link {
     text-decoration: none;
     color: #768ea9;
 }
-
+.sidebar-edit {
+    margin-left: 8px;
+    color: #768ea9;
+    svg {
+        display: block;
+        width: 16px;
+        height: 16px;
+    }
+}
 .sidebar-group {
     margin-bottom: 30px;
+}
+.sidebar-group-cog {
+    display: flex;
+    align-items: center;
 }
 .sidebar-group-title {
     margin-bottom: 10px;
     font-weight: 500;
+}
+.sidebar-group-edit {
+    margin-left: 8px;
+    color: #768ea9;
+    svg {
+        display: block;
+        width: 16px;
+        height: 16px;
+    }
 }
 
 .content {

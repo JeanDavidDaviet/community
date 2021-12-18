@@ -26,10 +26,12 @@ class GetAllPages
         foreach ($pages as $page) {
             $group = $page->getPageGroup();
             if ($group) {
+                $group_id = $group->getId();
                 $group_slug = $group->getSlug();
                 $group_title = $group->getTitle();
                 if (!array_key_exists($group_slug, $groups)) {
                     $groups[$group_slug] = [
+                        'id' => $group_id,
                         'title' => $group_title,
                         'pages' => []
                     ];
