@@ -4,34 +4,23 @@
 
 {% block body %}
     <h1>{{ "Liste des membres" | trans }}</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>{{ "Identifiant" | trans }}</th>
-                <th>{{ "Avatar" | trans }}</th>
-                <th>{{ "Email" | trans }}</th>
-                <th>{{ "Vérifié" | trans }}</th>
-                <th>{{ "Actions" | trans }}</th>
-            </tr>
-        </thead>
-        <tbody>
+    
+    {% if users %}
+        <ul>
         {% for user in users %}
-            <tr>
-                <td>{{ user.id }}</td>
-                <td><img src="{{ asset('uploads/avatars/' ~ user.avatar) }}" alt="" width="26" height="26" class="rounded-circle me-2"></td>
-                <td>{{ user.email }}</td>
-                <td>{{ user.isVerified }}</td>
-                <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">{{ "Afficher" | trans }}</a>
-                </td>
-            </tr>
+            <li>
+                <a href="{{ path('user_show', {'id': user.id}) }}">
+                    {% if user.avatar %}
+                    <img src="{{ asset('uploads/avatars/' ~ user.avatar) }}" style="border-radius: 100px; width: 100px; height: 100px; object-fit:cover;" />
+                    {% endif %}
+                    <p>{{ user.firstname ~ ' ' ~ user.lastname}}</p>
+                </a>
+            </li>
         {% else %}
             <tr>
                 <td colspan="5">{{ "Aucun membre trouvé" | trans }}</td>
             </tr>
         {% endfor %}
-        </tbody>
-    </table>
+    {% endif %}
 
 {% endblock %}

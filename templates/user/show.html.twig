@@ -1,6 +1,6 @@
 {% extends 'sidebar.html.twig' %}
 
-{% block title %}User{% endblock %}
+{% block title %}{{ user.firstname ~ ' ' ~ user.lastname}}{% endblock %}
 
 {% block body %}
 
@@ -8,97 +8,31 @@
         <div class="alert alert-success" role="alert">{{ flash }}</div>
     {% endfor %}
 
+    <h1>{{ user.firstname ~ ' ' ~ user.lastname}}</h1>
+
     {% if user.avatar %}
     <img src="{{ asset('uploads/avatars/' ~ user.avatar) }}" style="border-radius: 100px; width: 100px; height: 100px; object-fit:cover;" />
     {% endif %}
-
-
-    <h1>User</h1>
-
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>{{ "Identifiant" | trans }}</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>{{ "Email" | trans }}</th>
-                <td>{{ user.email }}</td>
-            </tr>
-    </table>
-
     {{ form_start(form) }}
         {{ form_row(form.avatar) }}
         <input type="submit" value="{{ "Téléchager" | trans }}"/>
     {{ form_end(form) }}
 
-    
+    <dl>
+        <dt>Email</dt>
+        <dd>{{ user.email }}</dd>
+    </dl>
 
-    {% if user.posts is not empty %}
-    <h2>{{ "Publications de l'utilisateur" | trans }}</h2>
+    {% if user.posts %}
+        <h2>{{ "Publications de l'utilisateur" | trans }}</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>{{ "Identifiant" | trans }}</th>
-                <th>{{ "Contenu" | trans }}</th>
-                <th>{{ "Crée le" | trans }}</th>
-                <th>{{ "Mis à jour le" | trans }}</th>
-                <th>{{ "Actions" | trans }}</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in user.posts %}
-            <tr>
-                <td>{{ post.id }}</td>
-                <td>{{ post.content }}</td>
-                <td>{{ post.createdAt ? post.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('post_show', {'id': post.id}) }}">{{ "Afficher" | trans }}</a>
-                    <a href="{{ path('post_edit', {'id': post.id}) }}">{{ "Editer" | trans }}</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">{{ "Aucune publication trouvée" | trans }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        {{ include('post/_list.html.twig', { posts: user.posts }) }}
     {% endif %}
 
-    {% if user.comments is not empty %}
+    {% if user.comments %}
     <h2>{{ "Commentaires de l'utilisateur" | trans }}</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>{{ "Identifiant" | trans }}</th>
-                <th>{{ "Contenu" | trans }}</th>
-                <th>{{ "Crée le" | trans }}</th>
-                <th>{{ "Mis à jour le" | trans }}</th>
-                <th>{{ "Actions" | trans }}</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for comment in user.comments %}
-            <tr>
-                <td>{{ comment.id }}</td>
-                <td>{{ comment.content }}</td>
-                <td>{{ comment.createdAt ? comment.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ comment.updatedAt ? comment.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('comment_edit', {'id': comment.id}) }}">{{ "Éditer" | trans }}</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">{{ "Aucun commentaire trouvé" | trans }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    {{ include('comment/_list.html.twig', { comments: user.comments }) }}
     {% endif %}
 
     <a href="{{ path('user_index') }}">{{ "Retour à la liste" | trans }}</a>
