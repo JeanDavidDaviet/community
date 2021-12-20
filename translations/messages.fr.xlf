@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="yo6CbZw" resname="Avatar">
+        <source>Avatar</source>
+        <target>Avatar</target>
+      </trans-unit>
+      <trans-unit id="RPXj__x" resname="Comment">
+        <source>Comment</source>
+        <target>Commentaire</target>
+      </trans-unit>
+      <trans-unit id="NV958p1" resname="Comments">
+        <source>Comments</source>
+        <target>Commentaires</target>
+      </trans-unit>
+      <trans-unit id="NB.9UUx" resname="Confirm my email">
+        <source>Confirm my email</source>
+        <target>Confirmer mon email</target>
+      </trans-unit>
+      <trans-unit id="Y5pA6Cu" resname="Connection">
+        <source>Connection</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="R70pB1_" resname="Content">
+        <source>Content</source>
+        <target>Contenu</target>
+      </trans-unit>
+      <trans-unit id="NOEIwIl" resname="Display">
+        <source>Display</source>
+        <target>Afficher</target>
+      </trans-unit>
+      <trans-unit id="70aIq2y" resname="Hello! Please confirm your email!">
+        <source>Hello! Please confirm your email!</source>
+        <target>Bonjour ! Veuillez confirmer votre email !</target>
+      </trans-unit>
+      <trans-unit id="U.RGFq6" resname="No comment found">
+        <source>No comment found</source>
+        <target>Aucun commentaire trouvé</target>
+      </trans-unit>
+      <trans-unit id="2vDMRpp" resname="No page group found">
+        <source>No page group found</source>
+        <target>Aucun groupe de page trouvé</target>
+      </trans-unit>
+      <trans-unit id="CelwoLU" resname="No member found">
+        <source>No member found</source>
+        <target>Aucun membre trouvé</target>
+      </trans-unit>
+      <trans-unit id="Vd.DZ3Y" resname="No page found">
+        <source>No page found</source>
+        <target>Aucune page trouvée</target>
+      </trans-unit>
+      <trans-unit id="Xs4_Qb9" resname="No post found">
+        <source>No post found</source>
+        <target>Aucune publication trouvée</target>
+      </trans-unit>
+      <trans-unit id="YvpaWw0" resname="Path">
+        <source>Path</source>
+        <target>Chemin</target>
+      </trans-unit>
+      <trans-unit id="DiImtSN" resname="Welcome">
+        <source>Welcome</source>
+        <target>Bienvenue</target>
+      </trans-unit>
+      <trans-unit id="h15hLu_" resname="User's comments">
+        <source>User's comments</source>
+        <target>Commentaires de l'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="rjoe6Q5" resname="Created on the">
+        <source>Created on the</source>
+        <target>Crée le</target>
+      </trans-unit>
+      <trans-unit id="hgM.daT" resname="Create an account">
+        <source>Create an account</source>
+        <target>Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="qXVQD4N" resname="Create a new comment">
+        <source>Create a new comment</source>
+        <target>Créer un nouveau commentaire</target>
+      </trans-unit>
+      <trans-unit id="FjT00Ow" resname="Create a new page group">
+        <source>Create a new page group</source>
+        <target>Créer un nouveau groupe de page</target>
+      </trans-unit>
+      <trans-unit id="DziWNtj" resname="Create a new page">
+        <source>Create a new page</source>
+        <target>Créer une nouvelle page</target>
+      </trans-unit>
+      <trans-unit id="EQpEGOT" resname="Create a new post">
+        <source>Create a new post</source>
+        <target>Créer une nouvelle publication</target>
+      </trans-unit>
+      <trans-unit id="JTBwK4e" resname="Create a post">
+        <source>Create a post</source>
+        <target>Créer une publication</target>
+      </trans-unit>
+      <trans-unit id="R1lJisK" resname="Create">
+        <source>Create</source>
+        <target>Créer</target>
+      </trans-unit>
+      <trans-unit id="oZMxR_f" resname="Edit post">
+        <source>Edit post</source>
+        <target>Editer la publication</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Editer</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="NMoOdmC" resname="Group">
+        <source>Group</source>
+        <target>Groupe</target>
+      </trans-unit>
+      <trans-unit id="xxeOiHL" resname="Pages groups">
+        <source>Pages groups</source>
+        <target>Groupes de pages</target>
+      </trans-unit>
+      <trans-unit id="mxBYf4S" resname="Identifier">
+        <source>Identifier</source>
+        <target>Identifiant</target>
+      </trans-unit>
+      <trans-unit id="hpdRMl3" resname="I already have an account">
+        <source>I already have an account</source>
+        <target>J'ai déjà un compte</target>
+      </trans-unit>
+      <trans-unit id="97M741U" resname="I don't have an account">
+        <source>I don't have an account</source>
+        <target>Je n'ai pas encore de compte</target>
+      </trans-unit>
+      <trans-unit id="FF7U8Fy" resname="The link will expire in">
+        <source>The link will expire in</source>
+        <target>Le lien va expirer dans</target>
+      </trans-unit>
+      <trans-unit id="D1kiEud" resname="Comments list">
+        <source>Comments list</source>
+        <target>Liste des commentaires</target>
+      </trans-unit>
+      <trans-unit id="4YknxMT" resname="Pages Groups list">
+        <source>Pages Groups list</source>
+        <target>Liste des groupes de pages</target>
+      </trans-unit>
+      <trans-unit id="H7ELCd6" resname="Members list">
+        <source>Members list</source>
+        <target>Liste des membres</target>
+      </trans-unit>
+      <trans-unit id="kEbaFq6" resname="Pages">
+        <source>Pages</source>
+        <target>Liste des pages</target>
+      </trans-unit>
+      <trans-unit id="Hk4EPZe" resname="Posts list">
+        <source>Posts list</source>
+        <target>Liste des publications</target>
+      </trans-unit>
+      <trans-unit id="EESkwFb" resname="Members">
+        <source>Members</source>
+        <target>Membres</target>
+      </trans-unit>
+      <trans-unit id="Ov3aLAm" resname="Thank you!">
+        <source>Thank you!</source>
+        <target>Merci !</target>
+      </trans-unit>
+      <trans-unit id="gHmyU67" resname="Updated on the">
+        <source>Updated on the</source>
+        <target>Mis à jour le</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="z5wlc4J" resname="New comment">
+        <source>New comment</source>
+        <target>Nouveau commentaire</target>
+      </trans-unit>
+      <trans-unit id="7EK1bSL" resname="New page group">
+        <source>New page group</source>
+        <target>Nouveau groupe de page</target>
+      </trans-unit>
+      <trans-unit id="QBJrDp0" resname="New page">
+        <source>New page</source>
+        <target>Nouvelle page</target>
+      </trans-unit>
+      <trans-unit id="flDiZnu" resname="New post">
+        <source>New post</source>
+        <target>Nouvelle publication</target>
+      </trans-unit>
+      <trans-unit id="njOR6b8" resname="Homepage">
+        <source>Homepage</source>
+        <target>Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="pVVGIsZ" resname="Post">
+        <source>Post</source>
+        <target>Publication</target>
+      </trans-unit>
+      <trans-unit id="bQEWijy" resname="User's posts">
+        <source>User's posts</source>
+        <target>Publications de l'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="qAgRz2i" resname="Posts">
+        <source>Posts</source>
+        <target>Publications</target>
+      </trans-unit>
+      <trans-unit id="IbGqFRy" resname="Published on">
+        <source>Published on</source>
+        <target>Publié le</target>
+      </trans-unit>
+      <trans-unit id="ScJmuqq" resname="Search">
+        <source>Search</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="Xaj3_8K" resname="Back to list">
+        <source>Back to list</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="wYmEDPf" resname="Log in">
+        <source>Log in</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="_TJnqhH" resname="Remember me">
+        <source>Remember me</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="1ur_gjW" resname="Download">
+        <source>Download</source>
+        <target>Téléchager</target>
+      </trans-unit>
+      <trans-unit id="IbAxGnP" resname="Please confirm your email by clicking on the link below">
+        <source>Please confirm your email by clicking on the link below</source>
+        <target>Veuillez confirmer votre email en cliquant sur le lien ci-dessous</target>
+      </trans-unit>
+      <trans-unit id="T3g4QC8" resname="Verified">
+        <source>Verified</source>
+        <target>Vérifié</target>
+      </trans-unit>
+      <trans-unit id="XSxnQ7h" resname="Edit page">
+        <source>Edit page</source>
+        <target>Éditer la page</target>
+      </trans-unit>
+      <trans-unit id="TzRvd3L" resname="Edit comment">
+        <source>Edit comment</source>
+        <target>Éditer le commentaire</target>
+      </trans-unit>
+      <trans-unit id="yg8Bzb4" resname="Edit page group">
+        <source>Edit page group</source>
+        <target>Éditer le groupe de pages</target>
+      </trans-unit>
+      <trans-unit id="lpQY9NW" resname="Créer">
+        <source>Créer</source>
+        <target>__Créer</target>
+      </trans-unit>
+      <trans-unit id="0ZQ5bkY" resname="Veuillez confirmer la création du compte">
+        <source>Veuillez confirmer la création du compte</source>
+        <target>__Veuillez confirmer la création du compte</target>
+      </trans-unit>
+      <trans-unit id="piivmAm" resname="Créer un compte">
+        <source>Créer un compte</source>
+        <target>__Créer un compte</target>
+      </trans-unit>
+      <trans-unit id="NM1ev5T" resname="J'ai déjà un compte">
+        <source>J'ai déjà un compte</source>
+        <target>__J'ai déjà un compte</target>
+      </trans-unit>
+      <trans-unit id="TBgXMTN" resname="Bonjour ! Veuillez confirmer votre email !">
+        <source>Bonjour ! Veuillez confirmer votre email !</source>
+        <target>__Bonjour ! Veuillez confirmer votre email !</target>
+      </trans-unit>
+      <trans-unit id="RLSE_w2" resname="Veuillez confirmer votre email en cliquant sur le lien ci-dessous :">
+        <source>Veuillez confirmer votre email en cliquant sur le lien ci-dessous :</source>
+        <target>__Veuillez confirmer votre email en cliquant sur le lien ci-dessous :</target>
+      </trans-unit>
+      <trans-unit id="ksW.gM2" resname="Confirmer mon email">
+        <source>Confirmer mon email</source>
+        <target>__Confirmer mon email</target>
+      </trans-unit>
+      <trans-unit id="ay.8Go7" resname="Le lien va expirer dans">
+        <source>Le lien va expirer dans</source>
+        <target>__Le lien va expirer dans</target>
+      </trans-unit>
+      <trans-unit id="A0khFX6" resname="Merci !">
+        <source>Merci !</source>
+        <target>__Merci !</target>
+      </trans-unit>
+      <trans-unit id="Xl0CFs4" resname="Supprimer">
+        <source>Supprimer</source>
+        <target>__Supprimer</target>
+      </trans-unit>
+      <trans-unit id="m5ELTgb" resname="Éditer la page">
+        <source>Éditer la page</source>
+        <target>__Éditer la page</target>
+      </trans-unit>
+      <trans-unit id="pcGirQq" resname="Nouvelle page">
+        <source>Nouvelle page</source>
+        <target>__Nouvelle page</target>
+      </trans-unit>
+      <trans-unit id="Oiqt3vO" resname="Créer une nouvelle page">
+        <source>Créer une nouvelle page</source>
+        <target>__Créer une nouvelle page</target>
+      </trans-unit>
+      <trans-unit id="oEm0gEX" resname="Éditer">
+        <source>Éditer</source>
+        <target>__Éditer</target>
+      </trans-unit>
+      <trans-unit id="RN.r_5M" resname="Page d'accueil">
+        <source>Page d'accueil</source>
+        <target>__Page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="UQV8Oyl" resname="Editer la publication">
+        <source>Editer la publication</source>
+        <target>__Editer la publication</target>
+      </trans-unit>
+      <trans-unit id="QLeNDdM" resname="Retour à la liste">
+        <source>Retour à la liste</source>
+        <target>__Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="z5TbpGy" resname="Nouvelle publication">
+        <source>Nouvelle publication</source>
+        <target>__Nouvelle publication</target>
+      </trans-unit>
+      <trans-unit id="xFKp_o0" resname="Créer une nouvelle publication">
+        <source>Créer une nouvelle publication</source>
+        <target>__Créer une nouvelle publication</target>
+      </trans-unit>
+      <trans-unit id="Ma8VF0a" resname="Liste des publications">
+        <source>Liste des publications</source>
+        <target>__Liste des publications</target>
+      </trans-unit>
+      <trans-unit id="JjAWpjB" resname="Créer une publication">
+        <source>Créer une publication</source>
+        <target>__Créer une publication</target>
+      </trans-unit>
+      <trans-unit id="VDBT9l_" resname="Crée le">
+        <source>Crée le</source>
+        <target>__Crée le</target>
+      </trans-unit>
+      <trans-unit id="EdS4ls4" resname="Mis à jour le">
+        <source>Mis à jour le</source>
+        <target>__Mis à jour le</target>
+      </trans-unit>
+      <trans-unit id="9516ize" resname="Commentaires">
+        <source>Commentaires</source>
+        <target>__Commentaires</target>
+      </trans-unit>
+      <trans-unit id="SpGOHxp" resname="Créer un nouveau commentaire">
+        <source>Créer un nouveau commentaire</source>
+        <target>__Créer un nouveau commentaire</target>
+      </trans-unit>
+      <trans-unit id="5a2_gei" resname="Afficher">
+        <source>Afficher</source>
+        <target>__Afficher</target>
+      </trans-unit>
+      <trans-unit id="IumSuye" resname="Editer">
+        <source>Editer</source>
+        <target>__Editer</target>
+      </trans-unit>
+      <trans-unit id="M6qZkz6" resname="Aucune publication trouvée">
+        <source>Aucune publication trouvée</source>
+        <target>__Aucune publication trouvée</target>
+      </trans-unit>
+      <trans-unit id="YdaVBBA" resname="Connexion">
+        <source>Connexion</source>
+        <target>__Connexion</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>__Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="yrFEeRj" resname="Se souvenir de moi">
+        <source>Se souvenir de moi</source>
+        <target>__Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit id="CsPSyzA" resname="Se connecter">
+        <source>Se connecter</source>
+        <target>__Se connecter</target>
+      </trans-unit>
+      <trans-unit id="_XTgfXC" resname="Je n'ai pas encore de compte">
+        <source>Je n'ai pas encore de compte</source>
+        <target>__Je n'ai pas encore de compte</target>
+      </trans-unit>
+      <trans-unit id="XstgexE" resname="Éditer le commentaire">
+        <source>Éditer le commentaire</source>
+        <target>__Éditer le commentaire</target>
+      </trans-unit>
+      <trans-unit id="YSHyAf3" resname="Bienvenue">
+        <source>Bienvenue</source>
+        <target>__Bienvenue</target>
+      </trans-unit>
+      <trans-unit id="brbmkFt" resname="Liste des membres">
+        <source>Liste des membres</source>
+        <target>__Liste des membres</target>
+      </trans-unit>
+      <trans-unit id="_SSqmFv" resname="Aucun membre trouvé">
+        <source>Aucun membre trouvé</source>
+        <target>__Aucun membre trouvé</target>
+      </trans-unit>
+      <trans-unit id="lqzMDaA" resname="Téléchager">
+        <source>Téléchager</source>
+        <target>__Téléchager</target>
+      </trans-unit>
+      <trans-unit id="XNPnTy7" resname="Publications de l'utilisateur">
+        <source>Publications de l'utilisateur</source>
+        <target>__Publications de l'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="TcB58We" resname="Commentaires de l'utilisateur">
+        <source>Commentaires de l'utilisateur</source>
+        <target>__Commentaires de l'utilisateur</target>
+      </trans-unit>
+      <trans-unit id="grLrB6r" resname="Publications">
+        <source>Publications</source>
+        <target>__Publications</target>
+      </trans-unit>
+      <trans-unit id="qlKx9wS" resname="Membres">
+        <source>Membres</source>
+        <target>__Membres</target>
+      </trans-unit>
+      <trans-unit id="Qbj4fmk" resname="Nouveau groupe de page">
+        <source>Nouveau groupe de page</source>
+        <target>__Nouveau groupe de page</target>
+      </trans-unit>
+      <trans-unit id="x9FADtG" resname="Éditer le groupe de pages">
+        <source>Éditer le groupe de pages</source>
+        <target>__Éditer le groupe de pages</target>
+      </trans-unit>
+      <trans-unit id="iEkcaUu" resname="Créer un nouveau groupe de page">
+        <source>Créer un nouveau groupe de page</source>
+        <target>__Créer un nouveau groupe de page</target>
+      </trans-unit>
+      <trans-unit id="9T2l.eH" resname="Liste des groupes de pages">
+        <source>Liste des groupes de pages</source>
+        <target>__Liste des groupes de pages</target>
+      </trans-unit>
+      <trans-unit id="_efUnkd" resname="Identifiant">
+        <source>Identifiant</source>
+        <target>__Identifiant</target>
+      </trans-unit>
+      <trans-unit id="eOeSABC" resname="Titre">
+        <source>Titre</source>
+        <target>__Titre</target>
+      </trans-unit>
+      <trans-unit id="IbsrEpR" resname="Chemin">
+        <source>Chemin</source>
+        <target>__Chemin</target>
+      </trans-unit>
+      <trans-unit id="Ocutzc0" resname="Aucun groupe de page trouvé">
+        <source>Aucun groupe de page trouvé</source>
+        <target>__Aucun groupe de page trouvé</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
