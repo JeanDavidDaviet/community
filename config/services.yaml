@@ -9,8 +9,12 @@ parameters:
 services:
     # default configuration for services in *this* file
     _defaults:
+        bind:
+            $project_dir: '%kernel.project_dir%'
         autowire: true      # Automatically injects dependencies in your services.
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+    
+    Symfony\Component\Yaml\Yaml:
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
