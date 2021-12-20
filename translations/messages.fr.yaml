@@ -62,3 +62,24 @@ Verified: Vérifié
 Edit page: Éditer la page
 Edit comment: Éditer le commentaire
 Edit page group: Éditer le groupe de pages
+Please confirm the accont creation: Veuillez confirmer la création de compte
+"Please confirm your email by clicking on the link below :": Veuillez confirmer la création de compte en cliquant sur le lien ci-dessous
+Created the: Crée le
+Updated the: Mis à jour le
+Login: Connexion
+User posts: Publications de l'utilisateur
+User comments: Commentaires de l'utilisateur
+Edit group page: Éditer le groupe de page
+By clicking on "Create an account" you accept the terms of use.: En cliquant sur "Créer un compte" vous acceptez les conditions d'utilisation.
+You should agree to our terms.:  Vous devez accepter nos conditions.
+Please enter a password: Veuillez entrer un mot de passe
+Your password should be at least {{ limit }} characters: Votre mot de passse devrait contenir au moins {{ limit }} caractères
+Please upload a valid jpg image: Veuillez uploader une image jpg valide
+Your avatar has successfully been uploaded: Votre avatar à bien été uploadé.
+Please confirm your email: Veuillez confirmer votre email
+Your email address has been verified.: Votre adresse email à bien été vérifiée
+Firstname: Prénom
+Name: Nom
+Are you sure you want to delete this item?: Êtes-vous sur de vouloir supprimer cet élement ?
+Published the: Publié le
+by: par

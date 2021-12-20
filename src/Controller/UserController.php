@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Component\Translation\TranslatableMessage;
 
 #[Route('/membres')]
 class UserController extends AbstractController
@@ -55,7 +56,7 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('success', 'Votre avatar à bien été uploadé.');
+            $this->addFlash('success', new TranslatableMessage('Your avatar has successfully been uploaded'));
 
             return $this->redirectToRoute('user_show', [
                 'id' => $user->getId()

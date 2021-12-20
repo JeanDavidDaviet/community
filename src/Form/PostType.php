@@ -16,7 +16,7 @@ class PostType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $submitLabel = new TranslatableMessage('Créer');
+        $submitLabel = new TranslatableMessage('Create');
         $builder
             ->add('title', TextType::class)
             ->add('content', CKEditorType::class, [

@@ -2,7 +2,7 @@
   <article class="box">
       <div class="box-inside">
           <h2>{{ post.title }}</h2>
-          <p>Publié le {{ post.createdAt ? post.createdAt|date('d/m/Y') : '' }} par <a href="{{ path('user_show', {'id': post.author.id}) }}">{{ post.author.firstname ~ ' ' ~ post.author.lastname }}</a></p>
+          <p>{{ "Published the" | trans}} {{ post.createdAt ? post.createdAt|date('d/m/Y') : '' }} {{ 'by' | trans }} <a href="{{ path('user_show', {'id': post.author.id}) }}">{{ post.author.firstname ~ ' ' ~ post.author.lastname }}</a></p>
           <p>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</p>
           <div>{{ post.content }}</div>
           <p>

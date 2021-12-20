@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Translation\TranslatableMessage;
 use Symfony\Component\Validator\Constraints\File;
 
 class AvatarType extends AbstractType
@@ -32,7 +33,7 @@ class AvatarType extends AbstractType
                         'mimeTypes' => [
                             'image/jpeg',
                         ],
-                        'mimeTypesMessage' => 'Please upload a valid jpg image',
+                        'mimeTypesMessage' => new TranslatableMessage('Please upload a valid jpg image'),
                     ])
                 ],
             ])
