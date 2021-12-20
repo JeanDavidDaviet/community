@@ -15,7 +15,7 @@
     {% endif %}
     {{ form_start(form) }}
         {{ form_row(form.avatar) }}
-        <input type="submit" value="{{ "Téléchager" | trans }}"/>
+        <input type="submit" value="{{ "Download" | trans }}"/>
     {{ form_end(form) }}
 
     <dl>
@@ -24,16 +24,16 @@
     </dl>
 
     {% if user.posts %}
-        <h2>{{ "Publications de l'utilisateur" | trans }}</h2>
+        <h2>{{ "User posts" | trans }}</h2>
 
         {{ include('post/_list.html.twig', { posts: user.posts }) }}
     {% endif %}
 
     {% if user.comments %}
-    <h2>{{ "Commentaires de l'utilisateur" | trans }}</h2>
+    <h2>{{ "User comments" | trans }}</h2>
 
     {{ include('comment/_list.html.twig', { comments: user.comments }) }}
     {% endif %}
 
-    <a href="{{ path('user_index') }}">{{ "Retour à la liste" | trans }}</a>
+    <a href="{{ path('user_index') }}">{{ "Back to list" | trans }}</a>
 {% endblock %}

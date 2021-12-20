@@ -6,11 +6,11 @@
           <p>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</p>
           <div>{{ post.content }}</div>
           <p>
-              <a href="{{ path('post_show', {'id': post.id}) }}">{{ "Afficher" | trans }}</a>
-              <a href="{{ path('post_edit', {'id': post.id}) }}">{{ "Editer" | trans }}</a>
+              <a href="{{ path('post_show', {'id': post.id}) }}">{{ "Display" | trans }}</a>
+              <a href="{{ path('post_edit', {'id': post.id}) }}">{{ "Edit" | trans }}</a>
           </p>
       </div>
   </article>
 {% else %}
-  <p>{{ "Aucune publication trouvée" | trans }}</p>
+  <p>{{ "No post found" | trans }}</p>
 {% endfor %}

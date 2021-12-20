@@ -1,12 +1,12 @@
-<h1>{{ "Bonjour ! Veuillez confirmer votre email !" | trans }}</h1>
+<h1>{{ "Hello! Please confirm your email!" | trans }}</h1>
 
 <p>
-    {{ "Veuillez confirmer votre email en cliquant sur le lien ci-dessous :" | trans }}
+    {{ "Please confirm your email by clicking on the link below :" | trans }}
     Please confirm your email address by clicking the following link: <br><br>
-    <a href="{{ signedUrl }}">{{ "Confirmer mon email" | trans }}</a>.
-    {{ "Le lien va expirer dans" | trans }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+    <a href="{{ signedUrl }}">{{ "Confirm my email" | trans }}</a>.
+    {{ "The link will expire in" | trans }} {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
 </p>
 
 <p>
-    {{ "Merci !" | trans }}
+    {{ "Thank you!" | trans }}
 </p>

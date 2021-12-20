@@ -5,7 +5,7 @@
 {% block body %}
 
     <div class="page-actions">
-        <a href="{{ path('page_edit', {'id': page.id}) }}">{{ "Éditer" | trans }}</a>
+        <a href="{{ path('page_edit', {'id': page.id}) }}">{{ "Edit" | trans }}</a>
         {{ include('page/_delete_form.html.twig') }}
     </div>
 

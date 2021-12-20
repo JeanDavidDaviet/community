@@ -1,9 +1,9 @@
 {% extends 'sidebar.html.twig' %}
 
-{% block title %}{{ "Liste des membres" | trans }}{% endblock %}
+{% block title %}{{ "Members list" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>{{ "Liste des membres" | trans }}</h1>
+    <h1>{{ "Members list" | trans }}</h1>
     
     {% if users %}
         <ul>
@@ -18,7 +18,7 @@
             </li>
         {% else %}
             <tr>
-                <td colspan="5">{{ "Aucun membre trouvé" | trans }}</td>
+                <td colspan="5">{{ "No member found" | trans }}</td>
             </tr>
         {% endfor %}
     {% endif %}

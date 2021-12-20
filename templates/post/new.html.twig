@@ -1,11 +1,11 @@
 {% extends 'sidebar.html.twig' %}
 
-{% block title %}{{ "Nouvelle publication" | trans }}{% endblock %}
+{% block title %}{{ "New post" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>{{ "Créer une nouvelle publication" | trans }}</h1>
+    <h1>{{ "Create a new post" | trans }}</h1>
 
     {{ include('post/_form.html.twig') }}
 
-    <a href="{{ path('post_index') }}">{{ "Retour à la liste" | trans }}</a>
+    <a href="{{ path('post_index') }}">{{ "Back to list" | trans }}</a>
 {% endblock %}

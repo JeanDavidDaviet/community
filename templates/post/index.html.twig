@@ -1,11 +1,11 @@
 {% extends 'sidebar.html.twig' %}
 
-{% block title %}{{ "Liste des publications" | trans }}{% endblock %}
+{% block title %}{{ "Posts list" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>{{ "Liste des publications" | trans }}</h1>
+    <h1>{{ "Posts list" | trans }}</h1>
 
     {{ include('post/_list.html.twig', { posts: posts }) }}
     
-    <a href="{{ path('post_new') }}">{{ "Créer une publication" | trans }}</a>
+    <a href="{{ path('post_new') }}">{{ "Create a post" | trans }}</a>
 {% endblock %}

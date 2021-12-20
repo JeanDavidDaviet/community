@@ -1,16 +1,16 @@
 {% extends 'sidebar.html.twig' %}
 
-{% block title %}{{ "Liste des groupes de pages" | trans }}{% endblock %}
+{% block title %}{{ "Pages Groups list" | trans }}{% endblock %}
 
 {% block body %}
-    <h1>{{ "Liste des groupes de pages" | trans }}</h1>
+    <h1>{{ "Pages Groups list" | trans }}</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>{{ "Identifiant" | trans }}</th>
-                <th>{{ "Titre" | trans }}</th>
-                <th>{{ "Chemin" | trans }}</th>
+                <th>{{ "Title" | trans }}</th>
+                <th>{{ "Path" | trans }}</th>
                 <th>{{ "Actions" | trans }}</th>
             </tr>
         </thead>
@@ -21,13 +21,13 @@
                 <td>{{ page_group.title }}</td>
                 <td>{{ page_group.slug }}</td>
                 <td>
-                    <a href="{{ path('page_group_show', {'id': page_group.id}) }}">{{ "Afficher" | trans }}</a>
-                    <a href="{{ path('page_group_edit', {'id': page_group.id}) }}">{{ "Éditer" | trans }}</a>
+                    <a href="{{ path('page_group_show', {'id': page_group.id}) }}">{{ "Display" | trans }}</a>
+                    <a href="{{ path('page_group_edit', {'id': page_group.id}) }}">{{ "Edit" | trans }}</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">{{ "Aucun groupe de page trouvé" | trans }}</td>
+                <td colspan="4">{{ "No page group found" | trans }}</td>
             </tr>
         {% endfor %}
         </tbody>

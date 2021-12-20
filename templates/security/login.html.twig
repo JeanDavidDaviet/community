@@ -1,6 +1,6 @@
 {% extends 'no-sidebar.html.twig' %}
 
-{% block title %}{{ "Connexion" | trans }}{% endblock %}
+{% block title %}{{ "Please confirm your email by clicking on the link below" | trans }}{% endblock %}
 
 {% block body %}
 
@@ -18,15 +18,15 @@
         <input id="email" name="email" type="email" value="{{ last_username }}" class="form-input" placeholder="name@example.com">
       </div>
       <div class="form-group">
-        <label for="password">{{ "Mot de passe" | trans }}</label>
+        <label for="password">{{ "Password" | trans }}</label>
         <input id="password" name="password" type="password" class="form-input">
       </div>
       <label>
-        <input type="checkbox" name="_remember_me">{{ "Se souvenir de moi" | trans }}
+        <input type="checkbox" name="_remember_me">{{ "Remember me" | trans }}
       </label>
     </div>
     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-    <button class="w-100 btn btn-lg btn-primary" type="submit">{{ "Se connecter" | trans }}</button>
-    <small><a href="{{ path('app_register') }}">{{ "Je n'ai pas encore de compte" | trans}}</a></small>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">{{ "Login" | trans }}</button>
+    <small><a href="{{ path('app_register') }}">{{ "I don't have an account" | trans}}</a></small>
   </form>
 {% endblock %}
