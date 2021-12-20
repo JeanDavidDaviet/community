@@ -24,10 +24,9 @@ class TranslationSortCommand extends Command
 
     protected function configure(): void
     {
-        // $this
-        //     ->addArgument('path', InputArgument::OPTIONAL, 'Path to the file to process')
-        //     ->addOption('force', false, InputOption::VALUE_NONE, 'Option description')
-        // ;
+        $this
+            ->addOption('file', 'f', InputOption::VALUE_NONE, 'The file to sort')
+        ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
@@ -39,17 +38,33 @@ class TranslationSortCommand extends Command
         //     $io->note(sprintf('You passed an argument: %s', $path));
         // }
 
-        // if ($input->getOption('option1')) {
-        //     // ...
-        // }
+        $files_path = $this->project_dir. '/translations';
 
-        $yamlFile = $this->project_dir. '/translations/messages.fr.yaml';
-        $yamlContent = $this->yaml::parseFile($yamlFile, Yaml::PARSE_CONSTANT);
-        ksort($yamlContent, SORT_NATURAL);
-        $yamlNewContent = $this->yaml::dump($yamlContent);
-        file_put_contents($yamlFile, $yamlNewContent);
+        if ($input->getOption('file')) {
+            $file = $input->getOption('file');
+        }
+
+        if (isset($file)) {
+            $this->parseFile($file);
+        } else {
+            $files = array_filter(scandir($files_path), function ($path) {
+                return pathinfo($path)['extension'] === 'yaml';
+            });
+            foreach ($files as $file) {
+                $this->parseFile($files_path . DIRECTORY_SEPARATOR . $file);
+            }
+        }
+
         $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
 
         return Command::SUCCESS;
+    }
+
+    private function parseFile(string $file): int|false
+    {
+        $parsedYaml = $this->yaml::parseFile($file, Yaml::PARSE_CONSTANT);
+        ksort($parsedYaml, SORT_NATURAL);
+        $yamlDump = $this->yaml::dump($parsedYaml);
+        return file_put_contents($file, $yamlDump);
     }
 }
