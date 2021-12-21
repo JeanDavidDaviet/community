@@ -4,10 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Entity\Post;
-use App\Form\CommentType;
+use App\Form\CreateCommentType;
+use App\Form\CreatePostType;
 use App\Form\PostType;
 use App\Repository\PostRepository;
-use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +29,7 @@ class PostController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $post = new Post();
-        $form = $this->createForm(PostType::class, $post);
+        $form = $this->createForm(CreatePostType::class, $post);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -50,11 +50,10 @@ class PostController extends AbstractController
     public function show(Post $post, Request $request, EntityManagerInterface $entityManager): Response
     {
         $comment = new Comment();
-        $form = $this->createForm(CommentType::class, $comment);
+        $form = $this->createForm(CreateCommentType::class, $comment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $comment->setCreatedAt(new DateTime());
             $comment->setAuthor($this->getUser());
             $comment->setPost($post);
             $entityManager->persist($comment);
