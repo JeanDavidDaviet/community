@@ -4,7 +4,7 @@
           <h2>{{ post.title }}</h2>
           <p>{{ "Published the" | trans}} {{ post.createdAt ? post.createdAt|date('d/m/Y') : '' }} {{ 'by' | trans }} <a href="{{ path('user_show', {'id': post.author.id}) }}">{{ post.author.firstname ~ ' ' ~ post.author.lastname }}</a></p>
           <p>{{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}</p>
-          <div>{{ post.content }}</div>
+          <div>{{ post.content | raw }}</div>
           <p>
               <a href="{{ path('post_show', {'id': post.id}) }}">{{ "Display" | trans }}</a>
               <a href="{{ path('post_edit', {'id': post.id}) }}">{{ "Edit" | trans }}</a>

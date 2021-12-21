@@ -16,7 +16,7 @@
     {{ "Updated the" | trans }} {{ post.updatedAt ? post.updatedAt|date('Y-m-d H:i:s') : '' }}
     {% endif %}
     
-    <div class="post-content">{{ post.content }}</div>
+    <div class="post-content">{{ post.content | raw }}</div>
     
     <h2>{{ "Comments" | trans }}</h2>
     
